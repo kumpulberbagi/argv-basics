@@ -25,6 +25,7 @@ let convert = (sentence) => {
 
 // Your CLI code here
 var arr = [];
+
 process.argv.forEach((val) => {
   arr.push(`${convert(val)}`);
 })
