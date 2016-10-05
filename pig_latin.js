@@ -24,3 +24,10 @@ let convert = (sentence) => {
 }
 
 // Your CLI code here
+var arr = [];
+process.argv.forEach((val) => {
+  arr.push(`${convert(val)}`);
+})
+
+arr.splice(0, 2)
+console.log(arr.join(' '))
