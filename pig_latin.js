@@ -24,3 +24,11 @@ let convert = (sentence) => {
 }
 
 // Your CLI code here
+var argv = process.argv
+var temp =""
+argv.forEach((val, index, array) => {
+  if(index >= 2){
+    temp += convert(val) + " "
+  }
+})
+console.log(temp);
