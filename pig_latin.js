@@ -24,3 +24,15 @@ let convert = (sentence) => {
 }
 
 // Your CLI code here
+// console.log(pigLatin("dharmadi"));
+//masukin process.argv
+// var val = pigLatin("dharmadi")
+let result = []
+process.argv.forEach((val, index, array) => {
+  // console.log(`${index}: ${val}`);
+  if(index > 1){
+    result.push(pigLatin(val));
+  }
+  
+})
+console.log(result.join(" "));
