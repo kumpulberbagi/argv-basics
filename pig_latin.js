@@ -23,4 +23,11 @@ let convert = (sentence) => {
   return result.join(" ")
 }
 
+let result = [];
 // Your CLI code here
+process.argv.forEach((val) => {
+  result.push(`${convert(val)}`);
+});
+
+result.splice(0,2);
+console.log(result.join(" "));
