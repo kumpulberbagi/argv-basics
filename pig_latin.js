@@ -23,4 +23,14 @@ let convert = (sentence) => {
   return result.join(" ")
 }
 
+
 // Your CLI code here
+//
+let arrPig = process.argv
+  if(arrPig.length===3){
+      console.log(pigLatin(process.argv[2]));
+  }
+  else if (arrPig.length>3){
+    let newSentencePig = process.argv.slice(2,process.argv.length).toString().replace(/[,]/g, " ")
+    console.log(convert(newSentencePig));
+  }
