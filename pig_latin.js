@@ -1,5 +1,4 @@
 'use strict'
-
 let pigLatin = (word) => {
   let firstLetter = word.charAt(0);
   if(isPowel(firstLetter)){
@@ -19,8 +18,12 @@ let convert = (sentence) => {
   for (let i=0;i<words.length;i++) {
     result[i] = pigLatin(words[i])
   }
-
   return result.join(" ")
 }
-
 // Your CLI code here
+var kalimat = ''
+process.argv.forEach((val,index,array)=>{
+
+  if(index>1) kalimat += `${convert(val)} `;
+})
+console.log(kalimat);
