@@ -1,30 +1,21 @@
-'use strict'
-let pigLatin = (word) => {
-  let firstLetter = word.charAt(0);
-  if(isPowel(firstLetter)){
-    return word
-  }else{
-    return `${word.substr(1)}${firstLetter}ay`;
+"use strict"
+
+function pig_latin(input){
+    var vowel = ['a','i','u','e','o']
+    var firstword = input.slice(0,1);
+    var lastword = input.slice(1,input.length)
+    if(vowel.indexOf(firstword)!= -1){
+      return input
+    }else{
+      return lastword+firstword+"ay"
+    }
+}
+
+function pig_latin_sentences(input){
+  var hasil = ""
+  var tampung = input.split(" ")
+  for (var i = 0; i < tampung.length; i++) {
+    hasil += pig_latin(tampung[i])+" "
   }
+  return hasil
 }
-
-let isPowel = (char) => {
-  return (/^[aeiou]$/i).test(char);
-}
-
-let convert = (sentence) => {
-  let result = []
-  let words = sentence.trim().split(/\s+/g)
-  for (let i=0;i<words.length;i++) {
-    result[i] = pigLatin(words[i])
-  }
-
-  return result.join(" ")
-}
-
-process.argv.forEach((input)=>{
-  console.log(pigLatin(input))
-});
-
-
-// Your CLI code here
