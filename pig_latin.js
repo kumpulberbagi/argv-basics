@@ -19,3 +19,7 @@ function pig_latin_sentences(input){
   }
   return hasil
 }
+
+process.argv.forEach((input)=>{
+  console.log(pig_latin_sentences(input));
+})
